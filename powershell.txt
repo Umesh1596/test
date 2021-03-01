@@ -1,0 +1,124 @@
+Docker Image:
+it is a package or template , used to craete one or more instances.
+
+community edition;
+it is having by default set of product 
+
+enterprise edition ;
+it is certified edition, add in , security.
+
+Run - start a container 
+docker ps - will show all the list of conatiner
+docker ps -a : to see all conatiner are running or not
+docker ps stop docker_id: use to stop container
+docker rm "docker name " : to remove container
+docker image: to see images
+docker rmi "image name": to delete image-before doing it make sure no container is running on it
+docker pull : to only pull image not run container
+docker run ubuntu : it will run ubuntu instance(ubuntu is only image)
+docker exe :use to execute a command on docker container 
+docker run -d: to run container in detach docker 
+docker run -i "container name" : it is used to intract mode 
+docker run -it : to connect with conect with terminal 
+docker run -p 80:your port :to map your port to public port or any port
+docker inspect : it return all details in json format
+docker logs "container ID"
+docker history: to see all history to see image size.
+docker network ls :to see the all the network
+
+*How to create your Image*
+all docker file will start with From command.
+1.create docker file with Docker name , it contain set of instructions , 
+all in left side in upper case are instrusction that docker ask to perform & right side are arguments.
+
+*CMD*
+comand & parameter should be seprate.
+
+Network:
+when we install docker it create 3 networks , bridge , none,host:
+
+Bridge:
+private internal network, they get by deafualt ip within 172 rage ip.
+
+*USER Defined Network:
+docker network create \ to craete your own network.
+*docker network ls :to see the all the network
+
+run docker inspect "container name"
+
+*container use theire name to contact with each other.
+
+*DNS server always run on 127.0.0.11
+
+* how docker stores data by deafulat:
+/var/lib/docker
+
+*--link is use to connect to containers.
+
+* Docker Registry *
+
+*LINUX command* 
+w : show all user in linux
+whoami:find out who you are
+id:group id - user id
+sudo su - : to beacome root
+su:to change user
+history:give you last captured command
+last:who loged in into system 
+pwd(present window directory):show you directery
+date:to see current date
+ls :return all file list
+Touch <filename>:to create file (ex:touch file1 file 2)
+cat file :to open file
+cat > fale1 :to write in file
+ctr+c : to exit file
+Cat >> file1 :if you want to add more data to same file.
+
+different linux system
+packages of linux 
+
+
+
+
+
+
+ANSIBLE
+
+ANSIBLE
+
+1.oracle virtual machine:to create virtual machines
+open ansible and go to terminal.
+
+
+host file:  getit etc/ansible is deafualt/host
+ssh connection: ansible -m ping "geoup of host machine"
+
+1st we need to install software.
+
+provasingg playbook
+
+---
+
+-name:install appache 
+hosts:test-servers
+beacome: true
+beacome_user:root
+gather_facts: true (gather keys,)
+tsks:
+   -name: *Install appache2*
+    package: name=appache2 state=present
+
+indentataion should be different.
+
+ansible-playbook "name of your playbook"
+
+*orchistartion configuration*
+-name: create database user edureka
+ mysql_user:user=edureka password=edureka priv=*,*:all state-present
+
+-name:create database edu
+mysql_db:db=edu state=present
+
+-name:craete a table reg
+command:mysql -u edureka -pedureka -e 'create table reg (name varchar(30,emai varchar )):'edu
+
